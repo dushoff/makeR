@@ -50,6 +50,9 @@ reads.Rout: simple.rda reads.R
 readleg.Rout: simple.Rout reads.R
 	$(run-R)
 
+plotleg.Rout: readleg.Rout themes.R plots.R
+	$(run-R)
+
 ######################################################################
 
 ### Makestuff
