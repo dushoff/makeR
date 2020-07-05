@@ -28,6 +28,9 @@ set.Rout: R/funs.R set.R
 
 use.Rout: R/funs.R set.rda use.R
 
+reuse.Rout: use.R R/funs.R set.rdata
+	$(makeR)
+
 ######################################################################
 
 ### Makestuff

@@ -1,7 +1,7 @@
 ## :my $useCLArgs = "for (a in commandArgs(TRUE)){ eval(parse(text=a)) }";
 
 loadEnvironments <- function(fl = commandArgs(TRUE)
-	, exts = c("RData", "Rdata", "rda")
+	, exts = c("RData", "Rdata", "rdata", "rda")
 )
 {
 	envl <- character(0)
@@ -18,4 +18,9 @@ loadEnvironments <- function(fl = commandArgs(TRUE)
 saveEnvironment <- function(fl = commandArgs(TRUE)[[1]], ext="rda"){
 	base <- sub("Rout$", "", fl)
 	save.image(file=paste0(base, ext))
+}
+
+saveVars <- function(..., fl = commandArgs(TRUE)[[1]], ext="rdata"){
+	base <- sub("Rout$", "", fl)
+	save(file=paste0(base, ext), ...)
 }
