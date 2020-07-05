@@ -22,14 +22,28 @@ Sources += $(wildcard *.R)
 fake.%:
 	$(touch $@)
 
-dev.Rout: R/funs.R dev.R
-
-set.Rout: R/funs.R set.R
-
-use.Rout: R/funs.R set.rda use.R
-
-reuse.Rout: use.R R/funs.R set.rdata
+dev.Rout: dev.R
 	$(makeR)
+
+set.Rout: set.R
+	$(makeR)
+
+use.Rout: use.R set.rda
+	$(makeR)
+
+reuse.Rout: use.R set.rdata
+	$(makeR)
+
+falibrate.Rout: set.rdata use.R
+	$(makeR)
+
+######################################################################
+
+## run-R
+
+runmake = TRUE
+
+simple.Rout: simple.R
 
 ######################################################################
 

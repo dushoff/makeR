@@ -1,5 +1,5 @@
 
-source("R/funs.R")
+source("makestuff/makeRfuns.R")
 
 ### 
 
