@@ -45,6 +45,11 @@ runmake = TRUE
 
 simple.Rout: simple.R
 
+reads.Rout: simple.rda reads.R
+
+readleg.Rout: simple.Rout reads.R
+	$(run-R)
+
 ######################################################################
 
 ### Makestuff
