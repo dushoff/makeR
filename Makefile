@@ -10,7 +10,25 @@ vim_session:
 
 ######################################################################
 
+Sources += $(wildcard R/*.R)
+## dev.Rout: dev.R
 
+######################################################################
+
+dev.R: ;
+
+Sources += $(wildcard *.R)
+
+fake.%:
+	$(touch $@)
+
+dev.Rout: R/funs.R dev.R
+
+set.Rout: R/funs.R set.R
+
+use.Rout: R/funs.R set.rda use.R
+
+######################################################################
 
 ### Makestuff
 
@@ -31,7 +49,7 @@ makestuff/Makefile:
 
 -include makestuff/os.mk
 
-## -include makestuff/wrapR.mk
+-include makestuff/makeR.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
