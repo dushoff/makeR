@@ -37,6 +37,9 @@ reuse.Rout: use.R set.rdata
 falibrate.Rout: set.rdata use.R
 	$(makeR)
 
+list.Rout: makestuff/makeRfuns.R.manual list.R
+	$(makeR)
+
 ######################################################################
 
 ## run-R
@@ -50,8 +53,11 @@ reads.Rout: simple.rda reads.R
 readleg.Rout: simple.Rout reads.R
 	$(run-R)
 
-plotleg.Rout: readleg.Rout themes.R plots.R
+plotleg.Rout: reads.rda themes.R plots.R
 	$(run-R)
+
+## Test chain
+## plotleg.Rout: simple.R
 
 ######################################################################
 
