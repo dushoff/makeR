@@ -40,6 +40,9 @@ falibrate.Rout: set.rdata use.R
 list.Rout: makestuff/makeRfuns.R.manual list.R
 	$(makeR)
 
+uselist.Rout: makestuff/makeRfuns.R.manual list.rds uselist.R 
+	$(makeR)
+
 ######################################################################
 
 ## run-R
