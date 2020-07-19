@@ -1,4 +1,5 @@
 ## This is makeR; it's supposed to be my first R package!
+## Developing now in makestuff instead (neutral face)
 
 current: target
 -include target.mk
