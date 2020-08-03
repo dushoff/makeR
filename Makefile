@@ -38,17 +38,24 @@ reuse.Rout: use.R set.rdata
 falibrate.Rout: set.rdata use.R
 	$(makeR)
 
-list.Rout: makestuff/makeRfuns.R.manual list.R
+list.Rout: list.R
 	$(makeR)
 
-uselist.Rout: makestuff/makeRfuns.R.manual list.rds uselist.R 
+uselist.Rout: list.rds uselist.R 
+	$(makeR)
+
+######################################################################
+
+wrap_makeR = TRUE
+
+## Environment list
+
+z.Rout: z.R x.rda y.rda
 	$(makeR)
 
 ######################################################################
 
 ## run-R
-
-runmake = TRUE
 
 simple.Rout: simple.R
 
@@ -63,7 +70,7 @@ plotleg.Rout: reads.rda themes.R plots.R
 ## Test chain
 ## plotleg.Rout: simple.R
 
-######################################################################
+#####################################################################
 
 ### Makestuff
 
