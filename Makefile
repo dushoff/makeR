@@ -53,6 +53,14 @@ wrap_makeR = TRUE
 z.Rout: z.R x.rda y.rda
 	$(makeR)
 
+## SaveVars
+
+vars.Rout: vars.R
+	$(makeR)
+
+readvars.Rout: readvars.R vars.rda
+	$(makeR)
+
 ######################################################################
 
 ## run-R
