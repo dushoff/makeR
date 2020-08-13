@@ -5,7 +5,6 @@ source("makestuff/makeRfuns.R")
 
 x <- 4
 y <- 5
-z <- 79
+z <- 6
 
-saveEnvironment()
-saveVars(y, z)
+saveVars(x, y, z)
