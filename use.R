@@ -3,7 +3,9 @@ source("makestuff/makeRfuns.R")
 
 ### 
 
-commandFiles()
+commandEnvironments()
+
+print(x)
 
 objects()
 
