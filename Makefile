@@ -14,6 +14,15 @@ vim_session:
 Sources += $(wildcard R/*.R)
 ## dev.Rout: dev.R
 
+## particulates.pdf: particulates.Rmd
+%.pdf: %.Rmd
+	$(knitpdf)
+
+## particulates.html: particulates.Rmd
+particulates.html: particulates.Rmd particulates.csv
+%.html: %.Rmd
+	$(knithtml)
+
 ######################################################################
 
 dev.R: ;
