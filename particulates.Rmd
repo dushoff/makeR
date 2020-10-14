@@ -1,0 +1,20 @@
+---
+title: Hello
+author: World
+---
+
+```{r setup, include=FALSE}
+source("makestuff/makeRfuns.R")
+commandEnvironments()
+```
+
+Hello, world!
+
+```{r calc}
+print(2^15)
+```
+
+```{r show}
+csvRead()
+```
+
