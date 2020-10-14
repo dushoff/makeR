@@ -18,6 +18,8 @@ Sources += $(wildcard R/*.R)
 %.pdf: %.Rmd
 	$(knitpdf)
 
+Ignore += particulates.html
+Sources += particulates.Rmd particulates.csv
 ## particulates.html: particulates.Rmd
 particulates.html: particulates.Rmd particulates.csv
 %.html: %.Rmd
